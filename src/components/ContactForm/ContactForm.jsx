@@ -11,7 +11,7 @@ const INITIAL_FORM_DATA = {
 };
 
 const ContactForm = () => {
-    const contacts = useSelector((state) => state.contactsData.contacts);
+    const contacts = useSelector((state) => state.contactsData.contacts.items);
     const [formData, setFormData] = useState(INITIAL_FORM_DATA)
     const dispatch = useDispatch();
 
