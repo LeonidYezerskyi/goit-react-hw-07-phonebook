@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import PropTypes from "prop-types";
 import css from './ContactForm.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from 'redux/contactSlice/contactSlice';
 import { nanoid } from '@reduxjs/toolkit';
+import { addContact } from 'redux/contactSlice/operations';
 
 const INITIAL_FORM_DATA = {
     contactName: '',
@@ -27,7 +26,7 @@ const ContactForm = () => {
         const newContact = {
             id: nanoid(),
             name: formData.contactName,
-            number: formData.contactNumber,
+            phone: formData.contactNumber,
         };
 
         if (
@@ -40,9 +39,7 @@ const ContactForm = () => {
             return;
         }
 
-        const newContacts = [newContact, ...contacts];
-
-        dispatch(addContact(newContacts));
+        dispatch(addContact(newContact));
         reset();
     };
 
@@ -63,6 +60,7 @@ const ContactForm = () => {
                         title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
                         onChange={onChange}
                         value={formData.contactName}
+                        placeholder='Write name and family name'
                         required
                     />
                 </label>
@@ -76,6 +74,7 @@ const ContactForm = () => {
                         title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
                         onChange={onChange}
                         value={formData.contactNumber}
+                        placeholder='Write phone number'
                         required
                     />
                 </label>
@@ -85,10 +84,5 @@ const ContactForm = () => {
         </div>
     )
 }
-
-ContactForm.propTypes = {
-    addContact: PropTypes.func,
-};
-
 
 export default ContactForm;
