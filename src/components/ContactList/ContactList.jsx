@@ -1,7 +1,7 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import css from './ContactList.module.css';
 import ContactElement from '../ContactElement/ContactElement';
-import { useSelector } from 'react-redux';
 import Loader from 'components/Loader/Loader';
 
 const ContactList = () => {

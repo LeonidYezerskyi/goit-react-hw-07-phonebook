@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
+import { fetchContacts } from 'redux/contactSlice/operations';
 import ContactForm from './ContactForm/ContactForm';
 import Filter from './Filter/Filter';
 import ContactList from './ContactList/ContactList';
 import css from './App.module.css';
-import { fetchContacts } from 'redux/contactSlice/operations';
 
 const App = () => {
 
@@ -18,7 +18,6 @@ const App = () => {
   return (
     <div
       style={{
-        // height: '100vh',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',

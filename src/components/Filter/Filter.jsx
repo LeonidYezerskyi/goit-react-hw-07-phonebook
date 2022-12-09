@@ -1,8 +1,6 @@
-import css from './Filter.module.css';
 import { filterContact } from 'redux/contactSlice/contactSlice';
 import { useDispatch, useSelector } from 'react-redux';
-
-
+import css from './Filter.module.css';
 
 const Filter = () => {
     const filter = useSelector((state) => state.contactsData.filter);
@@ -31,10 +29,5 @@ const Filter = () => {
         </div>
     )
 };
-
-// Filter.propTypes = {
-//     filter: PropTypes.string.isRequired,
-//     onChangeFilter: PropTypes.func.isRequired,
-// };
 
 export default Filter;

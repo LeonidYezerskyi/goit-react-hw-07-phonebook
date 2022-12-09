@@ -4,7 +4,6 @@ import { useDispatch } from 'react-redux';
 import css from './ContactElement.module.css';
 import { deleteContact } from 'redux/contactSlice/operations';
 
-
 const ContactElement = ({ name, phone, id }) => {
     const dispatch = useDispatch();
     return (
